@@ -1,13 +1,13 @@
 {
   "name": "men-pack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "men-pack is a collection of funcationalities that can helps developers to easily develop MongoDB Express Node Applications/Backend",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "npx rollup -c"
   },
-  "keywords": [],
+  "keywords": ["javascript","MERN", "Express", "MongoDB", "Nodejs"],
   "author": "Dhiraj Kumar",
   "license": "ISC",
   "devDependencies": {
