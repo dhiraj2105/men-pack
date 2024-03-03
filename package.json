@@ -1,6 +1,6 @@
 {
   "name": "men-pack",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "men-pack is a collection of funcationalities that can helps developers to easily develop MongoDB Express Node Applications/Backend",
   "type": "module",
   "main": "index.js",
