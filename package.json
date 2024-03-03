@@ -7,7 +7,7 @@
   "scripts": {
     "build": "npx rollup -c"
   },
-  "keywords": ["javascript","MERN", "Express", "MongoDB", "Nodejs"],
+  "keywords": ["men-pack" , "javascript","MERN", "Express", "MongoDB", "Nodejs"],
   "author": "Dhiraj Kumar",
   "license": "ISC",
   "devDependencies": {
