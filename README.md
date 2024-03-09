@@ -6,7 +6,8 @@ Instead of writing lines of codes developers can use this package to simply conn
 
 ## Features
 
-Right now it can connect to mongodb database.
+- Connect to MongoDB Database
+- Login User
 
 ## Usage
 
@@ -14,6 +15,36 @@ Right now it can connect to mongodb database.
 
 ```js
 ConnectToMongoDB("MongoDB URI");
+```
+
+### LoginAPI
+
+```js
+LoginAPI(LoginRoute, UserModel, server_name);
+```
+
+Example
+
+```js
+import Express from "express";
+import { ConnectMongoDB, LoginAPI } from "men-pack";
+import User from "./usermodel.js";
+import bodyParser from "body-parser";
+
+const app = Express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+ConnectMongoDB(
+  "mongodb+srv://dkskp2005-2107:25ReHcaGlGi2X3CX@cluster0.vo45abm.mongodb.net/?retryWrites=true&w=majority"
+);
+
+LoginAPI("/login", User, app);
+
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log("Server is running on port", PORT);
+});
 ```
 
 [!TIP]
