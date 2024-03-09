@@ -12,9 +12,9 @@ Right now it can connect to mongodb database.
 
 ### ConnectMongoDB
 
-'''
+```js
 ConnectToMongoDB("MongoDB URI");
-'''
+```
 
 [!TIP]
 You can remove bugs/errors from this package or add new features to it [ Github ](https://github.com/dhiraj2105/men-pack)
