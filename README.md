@@ -35,9 +35,7 @@ const app = Express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-ConnectMongoDB(
-  "mongodb+srv://dkskp2005-2107:25ReHcaGlGi2X3CX@cluster0.vo45abm.mongodb.net/?retryWrites=true&w=majority"
-);
+ConnectMongoDB("MONGOURI");
 
 LoginAPI("/login", User, app);
 
