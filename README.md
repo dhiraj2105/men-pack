@@ -61,7 +61,7 @@ Example
 
 ```js
 import Express from "express";
-import { ConnectMongoDB, LoginAPI } from "men-pack";
+import { ConnectMongoDB, RegisterAPI } from "men-pack";
 import User from "./usermodel.js";
 import bodyParser from "body-parser";
 
