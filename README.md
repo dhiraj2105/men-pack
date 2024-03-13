@@ -20,7 +20,7 @@ ConnectToMongoDB("MongoDB URI");
 ### LoginAPI
 
 ```js
-LoginAPI(LoginRoute, UserModel, server_name);
+app.post(LoginRoute, LoginAPI(User, onLoginSuccess));
 ```
 
 Example
@@ -37,7 +37,47 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 ConnectMongoDB("MONGOURI");
 
-LoginAPI("/login", User, app);
+const onLogin = (req, res) => {
+  res.status(200).json({ message: "Login Done, Redirect to home..." });
+  // You can navigate to any page after login
+};
+app.post("/login", LoginAPI(User, onLogin));
+// or you can just pass page name as a parameter
+app.post("/login", LoginAPI(User, "/home"));
+
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log("Server is running on port", PORT);
+});
+```
+
+### RegisterAPI
+
+```js
+app.post(RegisterRoute, RegisterAPI(User, OnRegisterSuccess));
+```
+
+Example
+
+```js
+import Express from "express";
+import { ConnectMongoDB, LoginAPI } from "men-pack";
+import User from "./usermodel.js";
+import bodyParser from "body-parser";
+
+const app = Express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+ConnectMongoDB("MONGOURI");
+
+const onRegisterSuccess = (req, res) => {
+  res.status(200).json({ message: "Register Done, Redirect to home..." });
+  // You can navigate to any page after registration
+};
+app.post("/register", RegisterAPI(User, onRegisterSuccess));
+// or you can just pass page name as a parameter
+app.post("/register", RegisterAPI(User, "/home"));
 
 const PORT = 5000;
 app.listen(PORT, () => {
