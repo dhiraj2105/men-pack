@@ -1,6 +1,6 @@
 # men-pack : MongoDB Express Nodejs - Package
 
-It is a package that can simply Server Developement.
+It is a package that can simplfy Server Developement.
 
 Instead of writing lines of codes developers can use this package to simply connect mongoDB to express server.
 
@@ -8,6 +8,7 @@ Instead of writing lines of codes developers can use this package to simply conn
 
 - Connect to MongoDB Database
 - Login User
+- Register User
 
 ## Usage
 
@@ -86,4 +87,7 @@ app.listen(PORT, () => {
 ```
 
 [!IMPORTANT]
-You can remove bugs/errors from this package or add new features to it [ Github ](https://github.com/dhiraj2105/men-pack)
+You can remove bugs/errors from this package or add new features to it
+[ Github ](https://github.com/dhiraj2105/men-pack)
+
+[ NPM ](https://www.npmjs.com/package/men-pack)
