@@ -43,7 +43,7 @@ const onLogin = (req, res) => {
   // You can navigate to any page after login
 };
 app.post("/login", LoginAPI(User, onLogin));
-// or you can just pass page name as a parameter
+// or you can pass page name as a parameter
 app.post("/login", LoginAPI(User, "/home"));
 
 const PORT = 5000;

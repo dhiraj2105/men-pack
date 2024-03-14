@@ -6,7 +6,7 @@ import bcrypt from "bcrypt";
 const ConnectMongoDB = (MONGOURI) => {
   mongoose.connect(MONGOURI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: truejust,
     socketTimeoutMS: 30000,
   });
   const db = mongoose.connection;
@@ -52,7 +52,6 @@ const RegisterAPI = (UserModel, OnRegisterSuccess) => async (req, res) => {
     if (!username || !email || !password) {
       return res.status(400).json({ error: "All fields are required" });
     }
-    // Check if the user already exists
     const existingUser = await UserModel.findOne({ email });
     if (existingUser) {
       return res.status(409).json({ error: "User already exists" });
