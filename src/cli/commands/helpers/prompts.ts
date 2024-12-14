@@ -1,17 +1,17 @@
-import inquirer from 'inquirer';
+import inquirer from "inquirer";
 
 export const askProjectName = async () => {
   return await inquirer.prompt([
     {
-      type: 'input',
-      name: 'projectName',
-      message: 'Enter your project name',
+      type: "input",
+      name: "projectName",
+      message: "Enter your project name",
       validate: (input) => {
         if (!input.trim()) {
-          return 'Project name cannot be empty.';
+          return "Project name cannot be empty.";
         }
         if (/[^a-zA-Z0-9-_]/.test(input)) {
-          return 'Project name can only include letters, numbers, hyphens, and underscores.';
+          return "Project name can only include letters, numbers, hyphens, and underscores.";
         }
         return true;
       },
@@ -22,10 +22,10 @@ export const askProjectName = async () => {
 export const askProjectType = async () => {
   return await inquirer.prompt([
     {
-      type: 'list',
-      name: 'projectType',
-      message: 'Choose your project type: ',
-      choices: ['TypeScript', 'JavaScript'],
+      type: "list",
+      name: "projectType",
+      message: "Choose your project type: ",
+      choices: ["TypeScript", "JavaScript"],
     },
   ]);
 };
@@ -33,10 +33,10 @@ export const askProjectType = async () => {
 export const askSetupType = async () => {
   return await inquirer.prompt([
     {
-      type: 'list',
-      name: 'setupType',
-      message: 'Choose your setup type: ',
-      choices: ['Basic', 'Full'],
+      type: "list",
+      name: "setupType",
+      message: "Choose your setup type: ",
+      choices: ["Basic", "Full"],
     },
   ]);
 };
@@ -44,9 +44,9 @@ export const askSetupType = async () => {
 export const askGenerateName = async () => {
   return await inquirer.prompt([
     {
-      type: 'input',
-      name: 'name',
-      message: 'Enter name of feature (e.g., users): ',
+      type: "input",
+      name: "name",
+      message: "Enter name of feature (e.g., users): ",
     },
   ]);
 };
@@ -54,10 +54,10 @@ export const askGenerateName = async () => {
 export const askGenerateType = async () => {
   return await inquirer.prompt([
     {
-      type: 'list',
-      name: 'generateType',
-      message: 'What would you like to generate ? : ',
-      choices: ['Controller', 'Routes', 'Model', 'Full API Scaffold'],
+      type: "list",
+      name: "generateType",
+      message: "What would you like to generate ? : ",
+      choices: ["Controller", "Route", "Model", "Full API Scaffold"],
     },
   ]);
 };
