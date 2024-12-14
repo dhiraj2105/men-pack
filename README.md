@@ -20,26 +20,11 @@ Building a backend from scratch for every project can be time-consuming and repe
 
 ## **Features**
 
-### **Core Features**
+1. **Environment Management**
 
-1. **MongoDB Integration**
+- Automatically handles `.env` file configurations.
 
-   - Easy MongoDB connection setup.
-   - Out-of-the-box support for environment-based configurations.
-
-2. **Authentication APIs**
-
-   - Pre-built login and signup APIs with JWT-based authentication.
-
-3. **Middleware Support**
-
-   - Common middlewares like CORS, body parsing, and request logging.
-
-4. **Environment Management**
-
-   - Automatically handles `.env` file configurations.
-
-5. **Routing & Controllers**
+3. **Routing & Controllers**
 
    - Generates modular routes and controllers to keep your project structured.
 
@@ -68,6 +53,14 @@ The CLI tool takes automation to the next level, allowing you to:
   - Extendable middleware templates for validation, caching, etc.
 - **Plugins**:
   - Extend MEN-Pack's functionality with custom plugins.
+
+* **MongoDB Integration**
+  - Easy MongoDB connection setup.
+  - Out-of-the-box support for environment-based configurations.
+* **Authentication APIs**
+  - Pre-built login and signup APIs with JWT-based authentication.
+* **Middleware Support**
+  - Common middlewares like CORS, body parsing, and request logging.
 
 ---
 
@@ -103,25 +96,10 @@ This will create a fully functional backend boilerplate with the chosen configur
 #### Create a New Route:
 
 ```bash
-men-pack generate route <route-name>
+men-pack generate
 ```
 
-This will:
-
-- Create a new route in the `routes/` folder.
-- Generate a corresponding controller in the `controllers/` folder.
-- Connect the route and controller automatically.
-
-#### Create a New Model:
-
-```bash
-men-pack generate model <model-name>
-```
-
-This will:
-
-- Create a schema in the `models/` folder.
-- Generate basic CRUD operations in the respective controller.
+You will be prompted to:- Choose between Components and TypeScript or JavaScript.
 
 ### **Environment Management**
 
@@ -130,57 +108,6 @@ MEN-Pack supports `.env` files for storing sensitive data. Example:
 ```env
 MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/<db-name>
 JWT_SECRET=your_secret_key
-```
-
----
-
-## **Development Commands**
-
-MEN-Pack provides several pre-configured commands to help with development and production:
-
-- **Build**: Transpile TypeScript files to JavaScript.
-
-  ```bash
-  npm run build
-  ```
-
-- **Start**: Start the server in production mode.
-
-  ```bash
-  npm start
-  ```
-
-- **Dev**: Run the server in development mode with live-reloading.
-
-  ```bash
-  npm run dev
-  ```
-
-- **Test**: Run tests.
-
-  ```bash
-  npm test
-  ```
-
----
-
-## **Folder Structure**
-
-```text
-src/
-  controllers/   # Controller files for business logic
-  models/        # Mongoose models
-  routes/        # API routes
-  middlewares/   # Custom middlewares
-  config/        # Configuration files (DB, env)
-  utils/         # Helper functions
-  index.ts       # Entry point
-
-dist/             # Compiled JavaScript files (ignored in GitHub)
-.env               # Environment variables (ignored in GitHub)
-.gitignore         # Git ignore file
-package.json       # npm package configuration
-README.md          # Documentation
 ```
 
 ---
@@ -209,17 +136,11 @@ We welcome contributions to MEN-Pack! Feel free to:
 
 ---
 
-## **License**
-
-MEN-Pack is licensed under the [MIT License](LICENSE).
-
----
-
 ## **Contact**
 
 For questions, feedback, or issues, reach out at:
 
-- GitHub Issues: [https://github.com/your-repo](https://github.com/your-repo)
+- GitHub Issues: [https://github.com/dhiraj2105/men-pack](https://github.com/dhiraj2105/men-pack)
 - npm Package: [https://www.npmjs.com/package/men-pack](https://www.npmjs.com/package/men-pack)
 
 ---
