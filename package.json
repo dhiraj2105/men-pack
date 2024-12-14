@@ -1,30 +1,42 @@
 {
   "name": "men-pack",
-  "version": "2.0.3",
-  "description": "men-pack is a collection of funcationalities that can helps developers to easily develop MongoDB Express Node Applications/Backend",
-  "type": "module",
+  "version": "3.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npx rollup -c"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
-  "keywords": [
-    "men-pack",
-    "javascript",
-    "MERN",
-    "Express",
-    "MongoDB",
-    "Nodejs"
-  ],
+  "bin": {
+    "men-pack": "./dist/cli/index.js"
+  },
+  "files": [
+  "dist",
+  "src",
+  "README.md"
+],
+  "keywords": ["men-pack", "dhiraj Kumar","javascript", "typescipt", "mongodb", "mern", "node","nodejs", "expressjs"],
   "author": "Dhiraj Kumar",
   "license": "ISC",
+  "description": "men-pack is a collection of funcationalities that can helps developers to easily develop MongoDB Express Node Applications/Backend",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "bcrypt": "^5.1.1",
-    "chalk": "^5.3.0",
-    "express": "^4.18.3",
-    "mongoose": "^8.2.0",
-    "rollup": "^4.12.0"
+    "@eslint/js": "^9.17.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^22.10.2",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.13.0",
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^12.2.0"
   }
 }
