@@ -1,6 +1,6 @@
 {
   "name": "men-pack",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -10,11 +10,21 @@
     "men-pack": "./dist/cli/index.js"
   },
   "files": [
-  "dist",
-  "src",
-  "README.md"
-],
-  "keywords": ["men-pack", "dhiraj Kumar","javascript", "typescipt", "mongodb", "mern", "node","nodejs", "expressjs"],
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "keywords": [
+    "men-pack",
+    "dhiraj Kumar",
+    "javascript",
+    "typescipt",
+    "mongodb",
+    "mern",
+    "node",
+    "nodejs",
+    "expressjs"
+  ],
   "author": "Dhiraj Kumar",
   "license": "ISC",
   "description": "men-pack is a collection of funcationalities that can helps developers to easily develop MongoDB Express Node Applications/Backend",
