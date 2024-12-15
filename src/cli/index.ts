@@ -17,7 +17,7 @@ const showHelp = () => {
   );
 };
 
-program.version("3.0.3");
+program.version("3.0.5");
 program.command("--help").description("list commands").action(showHelp);
 
 program
