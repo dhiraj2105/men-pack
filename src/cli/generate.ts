@@ -3,15 +3,18 @@ import {
   generateFullAPI,
   generateModel,
   generateRoute,
-} from './commands/helpers/fileOps';
+} from "./commands/helpers/fileOps";
 import {
   askGenerateName,
   askGenerateType,
   askProjectType,
-} from './commands/helpers/prompts';
+} from "./commands/helpers/prompts";
 
-export const execGenerate = async () => {
-  console.log(' Welcome to the generate tool !');
+export const execGenBoilerPlate = async () => {
+  console.log(" Welcome to the generate tool !");
+  console.log(
+    "--> You must have the respected folders in your project directory."
+  );
 
   // Step 1 : ask user what to generate
   const { generateType } = await askGenerateType();
@@ -21,19 +24,19 @@ export const execGenerate = async () => {
 
   //  Step 2 : generate based on user input
   switch (generateType) {
-    case 'Route':
+    case "Route":
       generateRoute(name, projectType);
       break;
-    case 'Controller':
+    case "Controller":
       generateController(name, projectType);
       break;
-    case 'Model':
+    case "Model":
       generateModel(name, projectType);
       break;
-    case 'Full API Scaffold':
+    case "Full API Scaffold":
       generateFullAPI(name, projectType);
       break;
     default:
-      console.log('Invalid choice!');
+      console.log("Invalid choice!");
   }
 };

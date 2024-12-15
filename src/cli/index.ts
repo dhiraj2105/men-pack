@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
-import { program } from 'commander';
-import { execInit } from './commands/init';
-import { execGenerate } from './generate';
-
-const args = process.argv.slice(2);
+import { program } from "commander";
+import { execInit } from "./commands/init";
+import { execGenBoilerPlate } from "./generate";
 
 const showHelp = () => {
   console.log(
@@ -19,40 +17,19 @@ const showHelp = () => {
   );
 };
 
-const showVersion = () => {
-  console.log('men-pack version 1.0.0');
-};
-
-// command handling
-// (async () => {
-//   switch (args[0]) {
-//     case 'init':
-//       execInit();
-//       break;
-//     case '--help':
-//       showHelp();
-//       break;
-//     case '--version':
-//       showVersion();
-//       break;
-//     default:
-//       console.error(
-//         `Unkown command, Use --help for a list of available commands.`
-//       );
-//       process.exit(1);
-//   }
-// })();
-
-program.command('--version').description('version of app').action(showVersion);
+program.version("3.0.3");
+program.command("--help").description("list commands").action(showHelp);
 
 program
-  .command('init')
-  .description('Initialize a new men-pack project')
+  .command("init")
+  .description("Initialize a new men-pack project")
   .action(execInit);
 
 program
-  .command('generate')
-  .description('Generate routes, controllers, models , or a full API scaffold')
-  .action(execGenerate);
+  .command("genbp")
+  .description(
+    "Generate boilerPlate for routes, controllers, models , or a full API scaffold"
+  )
+  .action(execGenBoilerPlate);
 
 program.parse(process.argv);
