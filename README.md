@@ -2,7 +2,7 @@
 
 **MEN-Pack** is a powerful npm package that simplifies backend development in Node.js by providing ready-to-use tools and boilerplates for projects. Built with scalability, ease of use, and modern best practices in mind, MEN-Pack enables developers to quickly set up and manage projects using MongoDB, Express, and Node.js, along with a CLI tool to automate repetitive tasks.
 
-[ I am rewriting the whole package so for now only CLI is working, but i am working on it and it will be available for ou use ASAP. ]
+[ I am rewriting the whole package so for now only CLI is working, but i am working on it and it will be available for ou use ASAP ]
 
 ---
 
