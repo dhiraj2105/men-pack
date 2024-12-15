@@ -47,10 +47,11 @@ export const createProjectStructure = (
     const tspackageJson = {
       name: `${projectName}`,
       version: "1.0.0",
+      type: "module",
       main: `${indexFile}`,
       scripts: {
         start: `node ${indexFile}`,
-        build: "tsc",
+        build: "npx tsc",
       },
       dependencies: {
         dotenv: "^16.4.7",
