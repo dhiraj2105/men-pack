@@ -1,1 +1,1 @@
-console.log('Welcome to men-pack rewritten in TS');
+console.log("Welcome to men-pack rewritten in TS");
