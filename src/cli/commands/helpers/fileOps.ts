@@ -275,7 +275,7 @@ This project was generated using men-pack CLI.
 
 export const generateRoute = (name: string, projectType: string) => {
   const ext = projectType === "TypeScript" ? "ts" : "js";
-  const filePath = path.join(process.cwd(), `src/routes`, `${name}.${ext}`);
+  const filePath = path.join(process.cwd(), `routes`, `${name}.${ext}`);
 
   const content = `
 import express from 'express';
@@ -294,11 +294,7 @@ export default router;
 export const generateController = (name: string, projectType: string) => {
   const ext = projectType === "TypeScript" ? "ts" : "js";
 
-  const filePath = path.join(
-    process.cwd(),
-    "src/controllers",
-    `${name}.${ext}`
-  );
+  const filePath = path.join(process.cwd(), "controllers", `${name}.${ext}`);
   const content = `
 export const get${name} = (req, res) => {
   res.send('${name} fetched successfully!');
@@ -314,7 +310,7 @@ export const create${name} = (req, res) => {
 export const generateModel = (name: string, projectType: string) => {
   const ext = projectType === "TypeScript" ? "ts" : "js";
 
-  const filePath = path.join(process.cwd(), "src/models", `${name}.${ext}`);
+  const filePath = path.join(process.cwd(), "models", `${name}.${ext}`);
   const content = `
 import mongoose from 'mongoose';
 
@@ -336,7 +332,7 @@ export const generateFullAPI = (name: string, projectType: string) => {
   const ext = projectType === "TypeScript" ? "ts" : "js";
 
   // Add route to main index.ts
-  const indexPath = path.join(process.cwd(), "src", `index.${ext}`);
+  const indexPath = path.join(process.cwd(), `index.${ext}`);
   let indexContent = fs.readFileSync(indexPath, "utf8");
   indexContent = indexContent.replace(
     "// ADD_ROUTES_HERE",
