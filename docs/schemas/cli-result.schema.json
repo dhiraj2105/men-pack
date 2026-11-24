@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "men-pack CLI JSON result",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "ok",
+        "command",
+        "dryRun",
+        "name",
+        "framework",
+        "database",
+        "language",
+        "projectPath",
+        "files"
+      ],
+      "properties": {
+        "ok": { "const": true },
+        "command": { "const": "init" },
+        "dryRun": { "type": "boolean" },
+        "name": { "type": "string" },
+        "framework": { "enum": ["express", "fastify", "nestjs"] },
+        "database": { "enum": ["mongodb", "postgresql", "sqlite"] },
+        "language": { "enum": ["typescript", "javascript"] },
+        "projectPath": { "type": "string" },
+        "files": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": ["ok", "command", "resource", "endpoint", "projectPath", "files"],
+      "properties": {
+        "ok": { "const": true },
+        "command": { "const": "generate" },
+        "resource": { "type": "string" },
+        "endpoint": { "type": "string" },
+        "projectPath": { "type": "string" },
+        "files": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": ["ok", "error"],
+      "properties": {
+        "ok": { "const": false },
+        "error": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  ]
+}

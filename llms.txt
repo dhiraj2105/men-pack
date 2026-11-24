@@ -1,0 +1,21 @@
+# men-pack
+
+> Interactive and automation-friendly scaffolding CLI for Node.js backend APIs.
+
+men-pack supports Express, Fastify, and NestJS; MongoDB, PostgreSQL, and SQLite; and JavaScript or TypeScript. It creates local project files and does not call an LLM or remote service.
+
+## Documentation
+
+- [Documentation index](docs/README.md): all user and maintainer guides.
+- [Getting started](docs/getting-started.md): install and run the CLI.
+- [CLI reference](docs/cli-reference.md): commands, options, aliases, and JSON mode.
+- [CLI result JSON Schema](docs/schemas/cli-result.schema.json): structured CLI response contract.
+- [Supported stacks](docs/supported-stacks.md): generated layouts, configuration, defaults, and limitations.
+- [Resource generation](docs/resource-generation.md): endpoint behavior and generated tests.
+- [AI agent and RAG usage](docs/ai-agents.md): machine-readable CLI examples and safe automation guidance.
+- [CI and npm publishing](docs/ci-and-publishing.md): checks and release workflow.
+- [Agent repository instructions](AGENTS.md): source map and contribution checks.
+
+## Machine interface
+
+For automation, use `men-pack init <name> --framework <framework> --database <database> --language <language> --json` or `men-pack generate <resource> --json`. JSON is written to stdout; errors return a non-zero status and a JSON error on stderr.

@@ -1,86 +1,111 @@
 # men-pack
 
-**men-pack** is a lightweight developer tool designed to simplify backend development by automating repetitive tasks like project setup and boilerplate code generation. I am actively working on adding new features to make backend developers' lives easier and more productive.
+**men-pack** is an interactive and automation-friendly CLI for starting Node.js backend APIs. Choose a framework, database, and language, then get a runnable project with security defaults, database startup checks, a health endpoint, tests, Docker Compose for local databases, and setup documentation.
 
----
+## Requirements
 
-## Installation
+- Node.js 22 or newer
+- npm
+- Docker Compose (optional; for local MongoDB or PostgreSQL)
 
-Install **men-pack** globally using npm:
+## Documentation
 
-```bash
-npm install -g men-pack
+- [Getting started](./docs/getting-started.md)
+- [CLI reference](./docs/cli-reference.md)
+- [Supported stacks and generated projects](./docs/supported-stacks.md)
+- [Resource generation](./docs/resource-generation.md)
+- [AI agent and RAG usage](./docs/ai-agents.md)
+- [CI and npm publishing](./docs/ci-and-publishing.md)
+- [LLM/RAG documentation index](./llms.txt)
+
+## Quick start
+
+```sh
+npx men-pack init my-api
+cd my-api
+npm install
+cp .env.example .env
+docker compose up -d # MongoDB and PostgreSQL projects only
+npm run dev
 ```
 
----
+By default, the wizard offers Express, MongoDB, and TypeScript. The generated API listens on port `3000`; check `http://localhost:3000/health`.
 
-## Features
+## Supported stacks
 
-### CLI Tools
+| Framework | Databases | Languages |
+| --- | --- | --- |
+| Express | MongoDB, PostgreSQL, SQLite | TypeScript, JavaScript |
+| Fastify | MongoDB, PostgreSQL, SQLite | TypeScript, JavaScript |
+| NestJS | MongoDB, PostgreSQL, SQLite | TypeScript, JavaScript |
 
-1. **Project Initialization**
+Use the SQLite project without Docker. MongoDB and PostgreSQL projects include a local-development `docker-compose.yml`. Its credentials are for local use only; configure managed services and production secrets separately.
 
-   Quickly set up a basic or full project with a single command.
+## CLI
 
-   ```bash
-   men-pack init
-   ```
+Run the interactive project wizard:
 
-2. **Boilerplate Code Generation**
+```sh
+men-pack init
+```
 
-   Generate clean boilerplate code for controllers, routes, models, or even a full API scaffold effortlessly.
+Pass options directly for CI and scripts:
 
-   ```bash
-   men-pack genbp
-   ```
+```sh
+men-pack init billing-api \
+  --framework fastify \
+  --database postgresql \
+  --language typescript \
+  --output-dir ./services \
+  --yes
+```
 
----
+Available choices:
 
----
+- `--framework`: `express`, `fastify`, or `nestjs`
+- `--database`: `mongodb`, `postgresql`, or `sqlite`
+- `--language`: `typescript` or `javascript`
+- `--output-dir`: parent directory for the new project
+- `--yes`: use Express, MongoDB, and TypeScript for unspecified choices (a name is still required)
+- `--dry-run`: preview generated file names without writing files
 
-## **Motive**
+`men-pack create` is an alias for `men-pack init`. Existing directories are never overwritten.
 
-Building a backend from scratch for every project can be time-consuming and repetitive. MEN-Pack aims to:
+Generate and register a resource in a men-pack project:
 
-- Save development time by automating common backend tasks.
-- Help beginners and professionals alike with a structured starting point.
-- Provide developers with the flexibility to choose between TypeScript or JavaScript.
-- Enable faster prototyping with boilerplate code generation for routes, models, and controllers.
-- Promote scalable and modern development practices.
+```sh
+men-pack generate user-profiles
+```
 
----
+`men-pack genbp` remains available as an alias. Resource names use lowercase kebab-case. Generated routes include `GET` and `POST` examples plus tests; the handlers are persistence-neutral starter code that you can connect to your database.
 
-## **Contributing**
+## Generated project
 
-We welcome contributions to MEN-Pack! Feel free to:
+Generated APIs include:
 
-- Report bugs.
-- Request features.
-- Create pull requests.
+- A `/health` endpoint and an HTTP-level test for it
+- Resource generation with registered `GET`/`POST` routes and focused tests
+- Security headers, CORS configuration, request rate limiting, and a JSON body-size limit where supported
+- Startup database connectivity checks and graceful shutdown handling
+- `.env.example`, a README, ESLint configuration, and scripts for development, build, test, and lint
+- Docker Compose for local MongoDB or PostgreSQL
 
-### Steps to Contribute:
+Configure `PORT` and `CORS_ORIGIN` in `.env`, along with the database URL documented in `.env.example`. `CORS_ORIGIN` accepts a comma-separated origin allowlist.
 
-1. Fork the repository on GitHub.
-2. Clone your forked repo:
-   ```bash
-   git clone <repo-url>
-   ```
-3. Make your changes and commit them:
-   ```bash
-   git add .
-   git commit -m "Your commit message"
-   ```
-4. Push to your fork and create a pull request.
+## Development
 
----
+```sh
+npm ci
+npm run build
+npm test
+npm run lint
+```
 
-## **Contact**
+The test suite checks all 18 supported framework/database/language combinations, validates generated source syntax, exercises resource generation and registration, and verifies the non-interactive CLI and overwrite protection.
 
-For questions, feedback, or issues, reach out at:
+## Contributing
 
-- GitHub Issues: [https://github.com/dhiraj2105/men-pack](https://github.com/dhiraj2105/men-pack)
-- npm Package: [https://www.npmjs.com/package/men-pack](https://www.npmjs.com/package/men-pack)
+Issues and pull requests are welcome. Before opening a pull request, run the development checks above and include tests for behavioral changes.
 
----
-
-Start building your backend projects faster and better with MEN-Pack today!
+- GitHub: [dhiraj2105/men-pack](https://github.com/dhiraj2105/men-pack)
+- npm: [men-pack](https://www.npmjs.com/package/men-pack)
