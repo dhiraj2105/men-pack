@@ -1,53 +1,55 @@
 {
   "name": "men-pack",
   "version": "3.0.7",
-  "main": "index.js",
+  "main": "dist/cli/index.js",
+  "type": "module",
   "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build"
+    "build": "npm run clean && tsc",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "lint": "eslint src tests",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint && npm test"
   },
   "bin": {
     "men-pack": "./dist/cli/index.js"
   },
   "files": [
     "dist",
-    "src",
-    "README.md"
+    "README.md",
+    "docs",
+    "llms.txt"
   ],
   "keywords": [
     "men-pack",
-    "dhiraj Kumar",
+    "scaffolding",
+    "backend",
     "javascript",
-    "typescipt",
+    "typescript",
+    "express",
+    "fastify",
+    "nestjs",
     "mongodb",
-    "mern",
-    "node",
-    "nodejs",
-    "expressjs"
+    "postgresql",
+    "sqlite",
+    "node"
   ],
   "author": "Dhiraj Kumar",
   "license": "ISC",
-  "description": "men-pack is a collection of funcationalities that can helps developers to easily develop MongoDB Express Node Applications/Backend",
+  "description": "Scaffold production-ready Node.js APIs with Express, Fastify, or NestJS",
+  "engines": {
+    "node": ">=22"
+  },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
-    "@types/fs-extra": "^11.0.4",
-    "@types/inquirer": "^9.0.7",
     "@types/node": "^22.10.2",
-    "@typescript-eslint/eslint-plugin": "^8.18.0",
-    "@typescript-eslint/parser": "^8.18.0",
     "eslint": "^9.17.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.13.0",
-    "prettier": "^3.4.2",
-    "ts-node": "^10.9.2",
     "typescript": "^5.7.2",
-    "typescript-eslint": "^8.18.0"
+    "typescript-eslint": "^8.73.0"
   },
   "dependencies": {
     "commander": "^12.1.0",
-    "fs-extra": "^11.2.0",
-    "inquirer": "^12.2.0",
-    "mongoose": "^8.9.0"
+    "inquirer": "^12.2.0"
   }
 }
