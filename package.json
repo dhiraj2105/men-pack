@@ -1,6 +1,6 @@
 {
   "name": "men-pack",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "main": "dist/cli/index.js",
   "type": "module",
   "scripts": {
