@@ -39,7 +39,7 @@ git push origin main --follow-tags
 For an explicit version, `npm version` updates the package manifest and lockfile and creates the matching commit and tag:
 
 ```sh
-npm version 3.0.8
+npm version 3.0.9
 git push origin main --follow-tags
 ```
 

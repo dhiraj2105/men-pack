@@ -1,6 +1,10 @@
 {
   "name": "men-pack",
-  "version": "3.0.8",
+  "version": "3.0.9",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dhiraj2105/men-pack"
+  },
   "main": "dist/cli/index.js",
   "type": "module",
   "scripts": {
