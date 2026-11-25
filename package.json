@@ -1,6 +1,6 @@
 {
   "name": "men-pack",
-  "version": "3.0.9",
+  "version": "3.0.10",
   "repository": {
     "type": "git",
     "url": "https://github.com/dhiraj2105/men-pack"
@@ -10,8 +10,9 @@
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
-    "lint": "eslint src tests",
-    "test": "npm run build && node --test tests/*.test.mjs",
+    "lint": "eslint src tests scripts docs/site/site.js",
+    "test": "npm run build && npm run docs:build && node --test tests/*.test.mjs",
+    "docs:build": "node scripts/build-docs.mjs",
     "prepare": "npm run build",
     "prepublishOnly": "npm run lint && npm test"
   },
@@ -36,7 +37,8 @@
     "mongodb",
     "postgresql",
     "sqlite",
-    "node"
+    "node",
+    "dhiraj kumar"
   ],
   "author": "Dhiraj Kumar",
   "license": "ISC",
@@ -49,6 +51,7 @@
     "@types/node": "^22.10.2",
     "eslint": "^9.17.0",
     "globals": "^15.13.0",
+    "marked": "^18.3.0",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.73.0"
   },

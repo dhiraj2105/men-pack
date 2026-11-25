@@ -4,6 +4,8 @@
 
 men-pack supports Express, Fastify, and NestJS; MongoDB, PostgreSQL, and SQLite; and JavaScript or TypeScript. It creates local project files and does not call an LLM or remote service.
 
+Documentation website: https://dhiraj2105.github.io/men-pack/
+
 ## Documentation
 
 - [Documentation index](docs/README.md): all user and maintainer guides.

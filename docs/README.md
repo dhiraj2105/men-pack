@@ -2,6 +2,8 @@
 
 men-pack scaffolds Node.js backend APIs and resource endpoints.
 
+Visit the [men-pack documentation website](https://dhiraj2105.github.io/men-pack/) for a searchable, responsive version of these guides.
+
 ## Guides
 
 - [Getting started](./getting-started.md): install the CLI and create your first project.

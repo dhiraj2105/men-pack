@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="keywords" content="Node.js API scaffolding, Express, Fastify, NestJS, MongoDB, PostgreSQL, SQLite">
+    <meta name="theme-color" content="#f7f8fb">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="men-pack docs">
+    <meta property="og:title" content="{{TITLE}} · men-pack">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:url" content="{{CANONICAL}}">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="{{CANONICAL}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ASSET_PREFIX}}assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ASSET_PREFIX}}assets/site.css">
+    <title>{{TITLE}} · men-pack docs</title>
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("men-pack-theme");
+          const theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Documentation navigation">
+        <a class="brand" href="{{ASSET_PREFIX}}index.html" aria-label="men-pack documentation home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="brand-name">men<span>-</span>pack</span>
+          <span class="brand-tag">DOCS</span>
+        </a>
+        <div class="sidebar-rule"></div>
+        <a class="sidebar-callout" href="https://www.npmjs.com/package/men-pack" target="_blank" rel="noopener noreferrer">
+          <span class="callout-icon" aria-hidden="true">↗</span>
+          <span><strong>Build your next API</strong><small>Available on npm</small></span>
+        </a>
+        <nav class="side-nav" aria-label="Main navigation">
+          {{NAV}}
+        </nav>
+        <div class="sidebar-bottom">
+          <span class="version-pill"><span class="status-dot"></span> v{{VERSION}}</span>
+          <a class="github-link" href="https://github.com/dhiraj2105/men-pack" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.7.08-.69.08-.69 1.12.08 1.7 1.15 1.7 1.15.99 1.69 2.59 1.2 3.22.92.1-.72.39-1.2.7-1.48-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.43 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.3-2.61 5.25-5.1 5.52.4.35.75 1.03.75 2.08v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
+            <span>GitHub</span><span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </aside>
+
+      <div class="page-column">
+        <header class="topbar">
+          <button class="icon-button mobile-menu" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+          <div class="breadcrumbs"><a href="{{ASSET_PREFIX}}index.html">Docs</a><span aria-hidden="true">/</span><span>{{TITLE}}</span></div>
+          <div class="topbar-actions">
+            <label class="search-box" for="docs-search">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+              <input id="docs-search" type="search" placeholder="Search docs..." autocomplete="off" aria-label="Search documentation">
+              <kbd>/</kbd>
+            </label>
+            <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle color theme">
+              <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+              <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.9 13A8.5 8.5 0 0 1 11 3.1 8.7 8.7 0 1 0 20.9 13Z"/></svg>
+            </button>
+            <a class="topbar-github" href="https://github.com/dhiraj2105/men-pack" target="_blank" rel="noopener noreferrer" aria-label="men-pack on GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.7.08-.69.08-.69 1.12.08 1.7 1.15 1.7 1.15.99 1.69 2.59 1.2 3.22.92.1-.72.39-1.2.7-1.48-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.43 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.3-2.61 5.25-5.1 5.52.4.35.75 1.03.75 2.08v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
+            </a>
+          </div>
+        </header>
+        <div class="search-results" id="search-results" hidden></div>
+        <main class="content" id="main-content">
+          {{CONTENT}}
+        </main>
+        <footer class="site-footer">
+          <span>Built for the builders.</span>
+          <span><a href="https://www.npmjs.com/package/men-pack" target="_blank" rel="noopener noreferrer">npm</a><span class="footer-divider">·</span><a href="https://github.com/dhiraj2105/men-pack" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+        </footer>
+      </div>
+    </div>
+    <div class="mobile-backdrop" id="mobile-backdrop" hidden></div>
+    <script src="{{ASSET_PREFIX}}assets/site.js" defer></script>
+  </body>
+</html>

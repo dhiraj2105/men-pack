@@ -1,6 +1,15 @@
 # CI and npm publishing
 
-The workflow at [`../.github/workflows/ci.yml`](../.github/workflows/ci.yml) runs on pushes to `main`, pull requests, version-tag pushes, and manual dispatch.
+The [GitHub Actions workflow](https://github.com/dhiraj2105/men-pack/blob/main/.github/workflows/ci.yml) runs on pushes to `main`, pull requests, version-tag pushes, and manual dispatch.
+
+## GitHub Pages documentation site
+
+The static documentation site is built from the Markdown guides and deployed automatically after successful checks on pushes to `main`:
+
+- Website: <https://dhiraj2105.github.io/men-pack/>
+- Local preview: `npm run docs:build`, then serve the generated `site/` directory with any static file server.
+
+For the first deployment, open **Repository Settings → Pages** and set the build and deployment source to **GitHub Actions**. The workflow's `deploy-docs` job uploads only the generated static site. It does not deploy on pull requests or version-tag pushes.
 
 ## Continuous integration
 
@@ -39,7 +48,7 @@ git push origin main --follow-tags
 For an explicit version, `npm version` updates the package manifest and lockfile and creates the matching commit and tag:
 
 ```sh
-npm version 3.0.9
+npm version 3.0.10
 git push origin main --follow-tags
 ```
 

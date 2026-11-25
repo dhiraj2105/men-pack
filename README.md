@@ -10,6 +10,7 @@
 
 ## Documentation
 
+- [Read the documentation website](https://dhiraj2105.github.io/men-pack/)
 - [Getting started](./docs/getting-started.md)
 - [CLI reference](./docs/cli-reference.md)
 - [Supported stacks and generated projects](./docs/supported-stacks.md)
