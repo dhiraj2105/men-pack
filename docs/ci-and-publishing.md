@@ -62,15 +62,21 @@ The version must not already exist on npm.
 
 ## Manual workflow runs
 
-Use **Actions → Build, Test, and Publish men-pack → Run workflow** to run verification manually. A manual run on a branch does not publish; the publish job is restricted to `v*` tags.
+Use **Actions → Build, Test, and Publish men-pack → Run workflow** to run verification manually. A manual run on a branch does not publish; publishing is triggered by pushing a `v*` tag.
 
-If a version tag already exists but its tag-push workflow did not publish, dispatch the workflow against that tag to rerun verification and publishing:
+If you created a release tag locally but have not pushed it, push that tag to trigger verification and publishing:
 
 ```sh
-gh workflow run ci.yml --ref v3.0.10
+git push origin v3.0.10
 ```
 
-Only do this when that version is not already published on npm.
+If the tag is already on GitHub but no tag workflow ran, you can manually dispatch the workflow against that tag:
+
+```sh
+gh workflow run ci.yml --repo dhiraj2105/men-pack --ref v3.0.10
+```
+
+Only trigger publishing when the tagged package version is not already published on npm.
 
 ## Verify before releasing locally
 
