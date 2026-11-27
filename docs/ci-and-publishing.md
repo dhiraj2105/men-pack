@@ -4,7 +4,7 @@ The [GitHub Actions workflow](https://github.com/dhiraj2105/men-pack/blob/main/.
 
 ## GitHub Pages documentation site
 
-The static documentation site is built from the Markdown guides and deployed automatically after successful checks on pushes to `main`:
+The static documentation site is built from the Markdown guides, uploaded as a Pages artifact in the `build-docs` job, then deployed in a dependent `deploy-docs` job after successful checks on pushes to `main`:
 
 - Website: <https://dhiraj2105.github.io/men-pack/>
 - Local preview: `npm run docs:build`, then serve the generated `site/` directory with any static file server.
@@ -63,6 +63,14 @@ The version must not already exist on npm.
 ## Manual workflow runs
 
 Use **Actions → Build, Test, and Publish men-pack → Run workflow** to run verification manually. A manual run on a branch does not publish; the publish job is restricted to `v*` tags.
+
+If a version tag already exists but its tag-push workflow did not publish, dispatch the workflow against that tag to rerun verification and publishing:
+
+```sh
+gh workflow run ci.yml --ref v3.0.10
+```
+
+Only do this when that version is not already published on npm.
 
 ## Verify before releasing locally
 
